@@ -1,15 +1,15 @@
 const leia = require("readline-sync")
 
-let idade = 0, menores = 0, maiores = 0;
+let vetor = [], pares = 0, impares = 0;
 
-while (idade >= 0) {
-    idade = leia.questionInt("Digite uma idade: ")
+for(let i = 0; i < 10; i++){
+    vetor[i] = leia.questionInt(`Digite o ${i+1} numero: `)
 
-    if(idade < 21 && idade >= 0) menores++
-        else if(idade > 50 && idade >= 0) maiores++
+    if(vetor[i]%2 == 0){
+        pares++;
+    }else{
+        impares++
+    }
 }
 
-
-
-console.log(`Total de pessoas menores de 21 anos: ${menores}`)
-console.log(`Total de pessoas maiores de 50 anos: ${maiores}`)
+console.log(`\nTotal de números pares: ${pares}\nTotal de números ímpares: ${impares}`);
